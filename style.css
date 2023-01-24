@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+  font-size: calc(0.75em + 0.75vmin);
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #fff;
+  color: #101820ff;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+}
+
+.menu {
+  margin: 1rem;
+  padding: 1rem;
+  max-width: 100%;
+  height: calc(100vh - 2rem);
+  top: 1rem;
+  position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff860;
+  border-radius: 25px;
+  overflow-y: scroll;
+}
+
+#search {
+  width: 100%;
+  border: 1px solid #101820ff;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.hidden:checked + .slider {
+  background-color: #2196f3;
+}
+
+.hidden:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+.hidden:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.clear {
+  border: 1px solid #101820ff;
+  padding: 0.8rem;
+  height: fit-content;
+  background-image: url("lataus.png");
+  background-repeat: no-repeat;
+  background-size: 1.6rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.filter {
+  padding: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fee715ff;
+  border-radius: 25px;
+  width: 100%;
+}
+
+.filter input {
+  margin-inline: 0.3rem;
+  width: 1rem;
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+
+.gallery {
+  padding: 1rem;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#sort {
+  outline: 0;
+  padding: 0.2rem;
+  border: 1px solid #101820ff;
+  grid-column: 2 / 3;
+  border-radius: 5px;
+  order: -100000000000000;
+}
+
+.recipe {
+  display: grid;
+  grid-template-rows: 0.1fr 10fr 2rem;
+  align-items: end;
+  gap: 1rem;
+}
+
+.recipe img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.recipe img:hover {
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.footer span {
+  font-size: 2rem;
+  line-height: 2rem;
+  height: 2rem;
+}
+
+.cart {
+  max-width: 2.5rem;
+}
+
+@media (max-width: 1368px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    margin: 0;
+    max-width: 100%;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .hamburger {
+    max-width: fit-content;
+    padding: 1rem;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101820ff;
+  }
+
+  .bar.active {
+    background-color: red;
+  }
+
+  .menu {
+    font-size: x-large;
+    margin: 0;
+    position: fixed;
+    top: calc(2rem + 29px);
+    left: -100vw;
+    width: 100%;
+    height: calc(100vh - 2rem - 29px);
+    transition: 0.3s;
+    border-radius: 0;
+  }
+
+  .menu.active {
+    left: 0;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  #sort {
+    grid-column: auto;
+  }
+
+  .cart {
+    max-width: 40px;
+  }
+
+  .footer span {
+    font-size: max(1.5rem, 20px);
+    line-height: max(1.5rem, 20px);
+    height: max(1.5rem, 20px);
+  }
+}

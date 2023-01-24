@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseptihaku</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav role="navigation">
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="menu">
+            <input id="search" type="text" placeholder="Etsi...">
+            <p>Ei-valikko:</p>
+            <label class="switch">
+                <input class="hidden" type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <span>Tyhjennä:</span>
+            <button class="clear"></button>
+        </div>
+        <div class="gallery">
+            <select name="sort" id="sort">
+                <option value="rate">Paras arvostelu</option>
+                <option value="new">Uusin ensin</option>
+                <option value="old">Vanhin ensin</option>
+            </select>
+        </div>
+    </div>
+    <script type="module" src="index.js" defer></script> 
+</body>
+</html>
